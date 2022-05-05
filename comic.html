@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/index/backtotop.css" />
+	<link rel="shortcut icon" href="./images/index/favicon.ico" />
+    <title>漫画</title>
+    <style>
+    * {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 0;
+	text-decoration: none;
+	list-style-type: none;
+}
+.shouye::before {
+	background-image: url(../images/index/首页.svg);
+	background-color: #FF5C7C;
+}
+
+.dongtai::before {
+	background-image: url(../images/index/动态.svg);
+	background-color: #FCBA2A;
+}
+
+.paihangbang::before {
+	background-image: url(../images/index/排行榜.svg);
+	background-color: #00A1D6;
+}
+a {
+	color: black;
+}
+
+a:hover {
+	color: #00A1D6;
+}
+span:hover{
+    color: #00A1D6;
+}
+img {
+	border-radius: 2px;
+}
+
+#top {
+	/* float: left; */
+	display: block;
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	z-index: 100;
+	/* display: flex; */
+	/* background-color: black; */
+    background-color: white;
+	/* background-color: rgba(0, 0, 0, 0.2); */
+}
+#top .bilibili游戏{
+    float: left;
+    width: 10%;
+    margin-left: 30px;
+    margin-top: 8px;
+}
+#top ul {
+	display: block;
+	/* justify-content: flex-start; */
+	/* 	min-width: 30%;
+	max-width: 50%; */
+	/* background-color: black; */
+	width:700px;
+    color: black;
+}
+
+#top ul li {
+	display: block;
+	float: left;
+	height: 20px;
+	width: 50px;
+	line-height: 50px;
+    margin-left: 10px;
+	text-align: center;
+    color: black;
+}
+#top ul .teli{
+    width: 70px;
+}
+/* #top ul li:nth-child(3) {
+	width: 75px;
+}
+
+#top ul li:last-child {
+	width: 75px;
+} */
+
+#top ul li a {
+	display: block;
+	font-size: 12px;
+	/* color: white; */
+    color: black;
+}
+
+#search {
+	display: inline-block;
+	margin-left: 5%;
+	height: 50px;
+	width: 25%;
+	
+}
+
+#search input[type="search"] {
+	position: relative;	
+	display: block;
+    /* left: 80%; */
+	width: 85%;
+	height: 36px;
+	font-size: 14px;
+	margin: 7px 0;
+	text-indent: 10px;
+	float: left;
+	/* background: rgba(255,255,255,0.5); */
+    background-color:#d9d9d9;
+}
+
+#search input{
+	border-radius: 10px 0px 0px 10px;
+}
+#search button {
+	width: 15%;
+	height: 36px;
+	font-size: 10px;
+	margin: 7px 0;
+	background-color: #d9d9d9;
+	float: left;
+	border-radius: 0px 10px 10px 0px;
+}
+#search button:hover{
+	cursor: pointer;
+}
+/* #search button img{
+	width: 15%;
+	height: 36px;
+} */
+
+.list ul{
+    margin-top: 10px;
+    display: block;
+}
+.list ul li{
+
+    list-style: none;
+    display: block;
+    float: left;
+    line-height: 40px;
+    width: 60px;
+	text-align: center;
+    margin-left: 40px;
+    
+}
+/* .list ul :nth-child(1){
+	/* margin-left: 20px; */
+
+.list li a{
+    display: block;
+	font-size: 14px;
+	/* color: white; */
+}
+.list{
+    height: 40px;
+    width:100%;
+    color: black;
+    background-color: white;
+    margin-left: 10px;
+}
+.jinping{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	display: block;
+	height: 30px;
+	width: 90px;
+	color: black;
+	font-size: 16px;
+}
+.jinping span{
+	display: block;
+	color: black;
+}
+#tuijian{
+	width: 100%;
+	display: block;
+	height: 500px;
+}
+#tuijian .game{
+	margin-left: 40px;
+	float: left;
+	color: black;
+	font-size: 14pxs;
+	width: 15%;
+	height: 250px;
+
+}
+#tuijian .game:nth-child(1){
+	margin-left: 20px;
+}
+#tuijian .game:nth-child(6){
+	margin-left: 20px;
+}
+#tuijian .game img{
+	width:100%;
+	height:80%;
+	/* padding-left: 10px; */
+
+}
+#tuijian .game div{
+	height: 10%;
+	color: black;
+	font-size: 14px;
+	text-align:left;
+}
+#tuijian .game .p{
+	color: #999;
+	font-size: 12px;
+	text-align: left;
+}
+.headimg{
+    float:right;
+    /* margin-right: 10px; */
+    /* width: 10%; */
+}
+.headimg img{
+	display: block;
+    width:30px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+/* #top-image{
+    /* margin-left: 200px; */
+#top-img{
+	margin-left: 60px;
+	width: 100%;
+	height:400px;
+	background-image: url(images/comic/img.jpg);
+	background-repeat: no-repeat;
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="top">
+            <img class="bilibili游戏" src="/images/comic/漫画.jpg">
+            <ul>
+                <li><a href="index.html">主站</a></li>
+                <li><a href="fanju.html">首页</a></li>
+                <!-- <li><a href="">排行榜</a></li>
+                <li><a href="">发现</a></li>
+                <li><a href="">WIKI</a></li>
+                <li class="teli"><a href="">大会员礼包</a></li>
+                <li><a href="">我的</a></li> -->
+                <!-- <li><a href="#">BW</a></li> -->
+                <!-- <li><a href="#">下载APP</a></li> -->
+            </ul>
+
+            <div id="search">
+                <form action="index.html" method="get">
+                    <input type="search"><a href="search.html"><button type="button">搜索</button></a>
+                </form>
+            </div>
+            <div class="headimg"><img src="/images/game/headimg.jpg" alt=""></div>
+            
+        </div>
+        
+        <!-- <img src="images/fanju/img.jpg" id="top-image"> -->
+    </div>
+	<div id="top-img"></div>
+    <!-- <img src="images/comic/img.jpg" id="top-image"> -->
+
+    <div class="list">
+        <ul>
+            <li><a href="">热血</a></li>
+            <li><a href="">古风</a></li>
+            <li><a href="">玄幻</a></li>
+            <li><a href="">奇幻</a></li>
+            <li><a href="">悬疑</a></li>
+            <li><a href="">都市</a></li>
+            <li><a href="">历史</a></li>
+            <li><a href="">武侠仙侠</a></li>
+            <li><a href="">游戏竞技</a></li>
+            <li><a href="">悬疑灵异</a></li>
+            <li><a href="">架空</a></li>
+            <!-- <li><a href="">青春</a></li>
+            <li><a href="">现代</a></li> -->
+        </ul>
+      
+    </div>
+    <div class="jinping">为你推荐</div>
+	<div id="tuijian">
+		<div class="game"><img src="/images/comic/tuijian1.jpg" alt=""><div>我独自盗墓</div><div class="p">都市</div></div>
+		<div class="game"><img src="/images/comic/tuijian2.jpg" alt=""><div>爷就是开挂少女</div><div class="p">古风</div></div>
+		<div class="game"><img src="/images/comic/tuijian3.jpg" alt=""><div>从1级开始的异世界骑士</div><div class="p">热血</div></div>
+		<div class="game"><img src="/images/comic/tuijian4.jpg" alt=""><div>骷髅奶爸</div><div class="p">西幻</div></div>
+		<div class="game"><img src="/images/comic/tuijian5.jpg" alt=""><div>修罗武神</div><div class="p">玄幻</div></div>
+		<div class="game"><img src="/images/comic/tuijian6.jpg" alt=""><div>无法升级的玩家</div class="p">都市<div></div></div>
+		<div class="game"><img src="/images/comic/tuijian7.jpg" alt=""><div>最强王者</div><div class="p">游戏竞技</div></div>
+		<div class="game"><img src="/images/comic/tuijian8.jpg" alt=""><div>真理面具</div><div class="p">悬疑灵异</div></div>
+		<div class="game"><img src="/images/comic/tuijian9.jpg" alt=""><div>桃花照玉案</div><div class="p">古风</div></div>
+		<div class="game"><img src="/images/comic/tuijian10.jpg" alt=""><div>黑化王爷超难哄</div><div class="p">古风</div></div>
+	</div>
+	<!-- <div class="jinping">热门推送</div>
+	<div id="tuijian">
+		<div class="game"><img src="/images/live/yanzhi1.webp" alt=""><div>重生之我在b站当主播</div></div>
+		<div class="game"><img src="/images/live/yanzhi2.webp" alt=""><div>我说我饿昏了 你到处说我二婚了？</div></div>
+		<div class="game"><img src="/images/live/yanzhi3.webp" alt=""><div>没工会 纯素颜 不漏水</div></div>
+		<div class="game"><img src="/images/live/yanzhi4.webp" alt=""><div>快来听我唱歌吧~</div></div>
+		<div class="game"><img src="/images/live/yanzhi5.webp" alt=""><div>（长沙）穿的像舞见的唱见！！</div></div>
+		<div class="game"><img src="/images/live/yanzhi6.webp" alt=""><div>限定蘑菇头</div></div>
+		<div class="game"><img src="/images/live/yanzhi7.webp" alt=""><div>长沙寡王</div></div>
+		<div class="game"><img src="/images/live/yanzhi8.webp" alt=""><div>吹拉弹唱奕小酒-可盐可甜养成系</div></div>
+	</div>  -->
+    
+    
+    <script src="js/index/backtotop.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index/lunbo.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index/tab.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

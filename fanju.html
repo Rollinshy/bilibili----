@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/index/favicon.ico" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/index/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/index/backtotop.css" /> -->
+    <title>番剧</title>
+    <style>
+        @charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 0;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	color: #00A1D6;
+}
+span:hover{
+    color: #00A1D6;
+}
+img {
+	border-radius: 2px;
+}
+
+#top {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	z-index: 100;
+	/* display: flex; */
+	/* background-color: black;
+	background-color: rgba(0, 0, 0, 0.2); */
+	background-color: white;
+}
+
+#top ul {
+	display: block;
+	/* justify-content: flex-start; */
+	/* 	min-width: 30%;
+	max-width: 50%; */
+	/* background-color: black; */
+	width: 500px;
+}
+
+#top ul li {
+	display: block;
+	float: left;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+#top ul li:nth-child(3) {
+	width: 75px;
+}
+
+#top ul li:last-child {
+	width: 75px;
+}
+
+#top ul li a {
+	display: block;
+	font-size: 14px;
+	/* color: white; */
+	color: black;
+}
+
+#search {
+	display: inline-block;
+	margin-left: 5%;
+	height: 50px;
+	width: 25%;
+	
+}
+
+#search input[type="search"] {
+	position: relative;	
+	display: block;
+	width: 85%;
+	height: 36px;
+	font-size: 14px;
+	margin: 7px 0;
+	text-indent: 10px;
+	float: left;
+	/* background: rgba(255,255,255,0.5); */
+	background-color: #d9d9d9;
+}
+
+#search input{
+	border-radius: 8px 0px 0px 8px;
+}
+#search button {
+	width: 15%;
+	height: 36px;
+	font-size: 10px;
+	margin: 7px 0;
+	background-color: #d9d9d9;
+	float: left;
+	color: black;
+	border-radius: 0px 8px 8px 0px;
+}
+#search button:hover{
+	cursor: pointer;
+}
+#search button img{
+	width: 15%;
+	height: 36px;
+}
+#top-image {
+	width: 100%;
+}
+
+/* #search input[type="submit"] {
+	width: 15%;
+	height: 36px;
+	font-size: 20px;
+	margin: 7px 0;
+	background-color: #d9d9d9;
+	display: block;
+	float: left;
+} */
+
+#user {
+	display: block;
+	float: right;
+	height: 50px;
+/* 	min-width: 15%;
+	max-width: 30%; */
+	width: 200px;
+	line-height: 50px;
+	margin-right: 0;
+}
+
+#user span {
+	float: left;
+	display: block;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+}
+
+#user span.user_img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#user span.user_img a {
+	display: block;
+	height: 30px;
+	width: 30px;
+	border-radius: 15px;
+	background-color: white;
+	overflow: hidden;
+}
+
+#user span.user_img a img {
+	height: 30px;
+	width: 30px;
+}
+
+#user span a {
+	font-size: 16px;
+	/* color: white; */
+	color: black;
+}
+
+
+
+#nav {
+	margin: 10px auto;
+	width: 100%;
+	height: 100px;
+	/* border: #000000 1px solid; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#nav .line {
+	border-left: #CCCCCC 1px solid;
+	height: 55%;
+	margin-top: 4px;
+}
+
+#nav .nav1 {
+	/* float: left; */
+	width: 20%;
+	height: 100px;
+	/* background-color: #000000; */
+}
+
+#nav .nav1 a div {
+	float: left;
+	width: 40px;
+	margin-left: 20px;
+	height: 100%;
+	font-size: 15px;
+	text-align: center;
+}
+
+/* #nav .nav1 div{
+	display: flex;
+	text-align: center;
+	align-content: center;
+} */
+
+#nav .nav1 div span {
+	font-size: 15px;
+	width: 60px;
+	font-size: 15px;
+	line-height: 40px;
+	text-align: center;
+	/* background-color: white; */
+}
+
+#nav .nav1 div span::before {
+	content: "";
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	background-position: center;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.shouye::before {
+	background-image: url(../images/index/首页.svg);
+	background-color: #FF5C7C;
+}
+
+.dongtai::before {
+	background-image: url(../images/index/动态.svg);
+	background-color: #FCBA2A;
+}
+
+.paihangbang::before {
+	background-image: url(../images/index/排行榜.svg);
+	background-color: #00A1D6;
+}
+
+
+#nav .nav2 {
+	/* float: left; */
+	/* margin: 0 auto; */
+	/* 950 */
+	width: 80%;
+	height: 100px;
+	/* background-color: #E5E9EF; */
+}
+
+
+#nav .nav2 a {
+	width: 100%;
+}
+
+#nav .nav2 a li {
+	font-size: 13px;
+	display: block;
+	box-sizing: border-box;
+	float: left;
+	height: 30px;
+	width: 9%;
+	line-height: 30px;
+	margin-top: 15px;
+	margin-left: 1%;
+	padding-left: 5px;
+	/* background-color: #000000; */
+}
+
+#nav .nav2 .nav-center a li span {
+	font-size: 10px;
+	display: inline-block;
+	height: 15px;
+	width: 30%;
+	text-align: center;
+	color: white;
+	line-height: 15px;
+	border-radius: 3px;
+	margin-left: 1px;
+	background-color: #73C9E5;
+}
+
+#nav .nav2 .nav-center a:last-child li span {
+	background-color: #73C9E5;
+}
+.list ul{
+    display: block;
+}
+.list ul li{
+    list-style: none;
+    display: block;
+    float: left;
+    line-height: 40px;
+    width: 80px;
+	text-align: center;
+    margin-left: 40px;
+    
+}
+.list li a{
+    display: block;
+	font-size: 14px;
+	/* color: white; */
+}
+.list{
+    height: 40px;
+    width:100%;
+    color: black;
+    background-color: white;
+    margin-left: 30px;
+}
+#lunbo {
+    /* margin-left: 20px; */
+	width: 100%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	/* background-color: white; */
+	/* position: relative; */
+	/* margin-left: 20px; */
+}
+#lunbo ul {
+	margin-left: -500px;
+	width: 1500px;
+	height: 100%;
+	/* overflow: hidden; */
+	/* position: relative; */
+}
+#lunbo ul li {
+	/* position: absolute; */
+	width: 500px;
+	height: 100%;
+	/* left: 0; */
+	float: left;
+	/* animation: banner 10s infinite; */
+}
+#lunbo ul li img {
+	height: 100%;
+	border-radius: 5px;
+}
+.update{
+    width: 80px;
+    height: 30px;
+    color: black;
+}
+.update p{
+	
+    font-size: 20px;
+}
+#donghua{
+    width: 100%;
+    height: 300px;
+}
+#donghua div img{
+    height: 100px;
+    float: left;
+}
+#donghua div span{
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: black;
+    height: 50px;
+    width: 100px;
+}
+#donghua div{
+    float: left;
+    height: 100px;
+    width: 25%;
+    margin-top: 40px;
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="top">
+            <ul>
+                <li><a href="index.html">主站</a></li>
+                <li><a href="fanju.html">番剧</a></li>
+                <li><a href="game.html">游戏中心</a></li>
+                <li><a href="live.html">直播</a></li>
+                <li><a href="shopping.html">会员购</a></li>
+                <li><a href="comic.html">漫画</a></li>
+                <li><a href="competition.html">赛事</a></li>
+                <!-- <li><a href="#">BW</a></li> -->
+                <!-- <li><a href="#">下载APP</a></li> -->
+            </ul>
+
+            <div id="search">
+                <form action="index.html" method="get">
+                    <input type="search"><a href="search.html"><button type="button">搜索</button></a>
+                </form>
+            </div>
+
+            <div id="user">
+                <span class="user_img"><a href="homepage.html"><img src="./images/index/头像.jpg"></a></span>
+                <span><a href="login.html">登录</a></span>
+                <span><a href="register.html">注册</a></span>
+            </div>
+        </div>
+        
+        <img src="images/fanju/img.jpg" id="top-image">
+    </div>
+    
+		<div id="nav">
+			<div class="nav1">
+				<a href="index.html">
+					<div>
+						<span class="shouye">首页</span>
+					</div>
+				</a>
+				<a href="https://t.bilibili.com/?spm_id_from=333.1007.0.0">
+					<div>
+						<span class="dongtai">动态</span>
+					</div>
+				</a>
+				<a href="https://www.bilibili.com/v/popular/all?spm_id_from=333.1007.0.0">
+					<div>
+						<span class="paihangbang">排行</span>
+					</div>
+				</a>
+			</div>
+			<div class="line"></div>
+			<div class="nav2">
+				<ul class="nav-center">
+
+					<a href="https://www.bilibili.com/v/douga/?spm_id_from=333.1007.0.0">
+						<li>动画<span>596</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/music?spm_id_from=333.1007.0.0">
+						<li>音乐<span>999+</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/dance/?spm_id_from=333.1007.0.0">
+						<li>舞蹈<span>238</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/tech/?spm_id_from=333.1007.0.0">
+						<li>科技<span>925</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/life?spm_id_from=333.1073.0.0">
+						<li>生活<span>999+</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/fashion?spm_id_from=333.1007.0.0">
+						<li>时尚<span>332</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/ent/?spm_id_from=333.1073.0.0">
+						<li>娱乐<span>999+</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/life/funny?spm_id_from=333.1007.0.0">
+						<li>放映厅<span>57</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/animal?spm_id_from=333.1073.0.0">
+						<li>动物圈<span>484</span></li>
+					</a>
+					<a href="https://www.bilibili.com/cheese/?spm_id_from=333.1073.0.0">
+						<li>云课堂<span>999</span></li>
+					</a>
+					<a href="https://www.bilibili.com/anime/?spm_id_from=333.1007.0.0">
+						<li>番剧<span>101</span></li>
+					</a>
+					<a href="https://www.bilibili.com/guochuang/?spm_id_from=333.1007.0.0">
+						<li>国创<span>43</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/game/?spm_id_from=333.1007.0.0">
+						<li>游戏<span>999+</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/knowledge/?spm_id_from=333.1007.0.0">
+						<li>知识<span>180</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/kichiku/?spm_id_from=333.1007.0.0">
+						<li>鬼畜<span>29</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/information/?spm_id_from=333.1007.0.0">
+						<li>资讯<span>38</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/cinephile?spm_id_from=333.1007.0.0">
+						<li>影视<span>999+</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/life/funny?spm_id_from=333.1073.0.0">
+						<li>搞笑<span>753</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/food?spm_id_from=333.1007.0.0">
+						<li>美食圈<span>315</span></li>
+					</a>
+					<a href="https://www.bilibili.com/v/life/daily?tag=530003">
+						<li>VLOG<span>999</span></li>
+					</a>
+				</ul>
+			</div>
+			
+			
+		</div>  
+
+        <div class="list">
+            <ul>
+                <li><a href="">全部</a></li>
+                <li><a href="">连载动画</a></li>
+                <li><a href="">完结动画</a></li>
+                <li><a href="">资讯</a></li>
+                <li><a href="">官方延伸</a></li>
+                <li><a href="">新番时间表</a></li>
+                <li><a href="">番剧索引</a></li>
+            </ul>
+          
+        </div>
+        <div id="lunbo">
+            <ul id="banner">
+                <li class="lunbo">
+                    <span>1</span>
+                    <img src="images/fanju/lunbo1.webp">
+                </li>
+                <li class="lunbo">
+                    <span>2</span>
+                    <img src="images/fanju/lunbo2.webp">
+                </li>
+                <li class="lunbo">
+                    <span>3</span>
+                    <img src="images/fanju/lunbo3.webp">
+                </li>
+                <li class="lunbo">
+                    <span>4</span>
+                    <img src="images/fanju/lunbo4.webp">
+                </li>
+                <li class="lunbo">
+                    <span>5</span>
+                    <img src="images/fanju/lunbo5.webp">
+                </li>
+            </ul>
+        </div>
+        <div class="update"><p>最近更新</p></div>
+        <div id="donghua">
+            <div><a href=""><img src="/images/fanju/list1.webp" alt=""><span>不能播放</span></a></div>
+            <div><a href=""><img src="/images/fanju/list2.webp" alt=""><span>恋爱游戏世界对路人角色很不友好</span></a></div>
+            <div><a href=""><img src="/images/fanju/list3.webp" alt=""><span>博人传 火影忍者新时代</span></a></div>
+            <div><a href=""><img src="/images/fanju/list4.webp" alt=""><span>名侦探柯南</span></a></div>
+            <div><a href=""><img src="/images/fanju/list5.webp" alt=""><span>半妖的夜叉姬 第二季</span></a></div>
+            <div><a href=""><img src="/images/fanju/list6.webp" alt=""><span>白领羽球部</span></a></div>
+            <div><a href=""><img src="/images/fanju/list7.webp" alt=""><span>指名！</span></a></div>
+            <div><a href=""><img src="/images/fanju/list8.webp" alt=""><span>测不准的阿波连同学</span></a></div>
+            <div><a href=""><img src="/images/fanju/list9.webp" alt=""><span>处刑少女的生存之道</span></a></div>
+            <div><a href=""><img src="/images/fanju/list10.webp" alt=""><span>鬼灭之刃 无限列车篇 中配版</span></a></div>
+            <div><a href=""><img src="/images/fanju/list11.webp" alt=""><span>勇者斗恶龙 达伊的大冒险</span></a></div>
+            <div><a href=""><img src="/images/fanju/list12.webp" alt=""><span>理科生坠入情网，故尝试证明。 第二季</span></a></div>
+        </div>
+        <script src="js/index/backtotop.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index/lunbo.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index/tab.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人信息设置</title>
+        <style>
+            #login{
+                width: 30px;
+                height: 30px;
+            }
+            body{
+                margin: 100px 400px;
+            }
+        </style>
+	</head>
+    
+	<body>
+		<form action="#" method="get" name="relogin">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr bgcolor="darkorange">
+					<td width="300">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<font color="white">个人信息编辑</font>
+					</td>
+				</tr>
+				<!--创建姓名选框 设置该项为必填项 调用input中required方法-->
+				<tr>
+					<td height="40">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					真实姓名:<input type="text" name="name" required placeholder="请输入昵称">
+					<font color="red" size="+1">*</font>
+					</td>
+				</tr>
+				<tr>
+					<td height="40">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						年龄:<input type="number" min="0" max="100" required placeholder="年龄">
+						<font color="red">*</font>
+					</td>
+				</tr>
+				<tr height="40">
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						手机号码:<input type="number" maxlength="11" name="number" required>
+						<font color="red">*</font>
+					</td>
+				</tr>
+				<tr height="40">
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						生日:<input type="date" name="brithday" >
+					</td>
+				</tr>
+				<tr height="40">
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					个人主页:<input type="url" name="email">
+					</td>
+				</tr>
+				<tr height="40">
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						电子邮件:<input type="email" name="email">
+					</td>
+				</tr>
+				<tr height="40" align="center">
+					<td>
+						<input id="login" type="image" src="/images/setting/登录.jpg">
+					</td>
+				</tr>
+				</table>
+			</form>
+	</body>
+</html>
